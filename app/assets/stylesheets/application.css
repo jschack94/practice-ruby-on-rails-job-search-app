@@ -1,15 +1,192 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+ /* GLOBAL */
+
+ body {
+    background-color: #122351;
+    font-family: Open Sans, sans-serif;
+  }
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+ /* FONTS */
+
+ * {
+   color: white;
+ }
+
+ input, select, textarea{
+    color: #000;
+}
+
+ /* NAVIGATION */
+
+  .navigation-logo {
+    font-family: Baloo Tammudu;
+    font-size: 80px;
+    color: White;
+    display: inline-block;
+  }
+
+  .navigation-logo a {
+    text-decoration: none;
+  }
+
+  .navigation-page {
+    color: White;
+    padding:40px 30px;
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .navigation-page a {
+    text-decoration: none;
+  }
+
+  .navigation-page a:hover {
+    text-decoration: underline;
+  }
+
+  .navigation-page-session a {
+    color: White;
+    display: inline-block;
+    text-decoration: none;
+    position: absolute;
+    right: 30px;
+    top: 93px;
+  }
+
+  .navigation-page-session a:hover {
+    text-decoration: underline;
+  }
+
+  hr {
+      top: auto;
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 3px solid #ccc;
+      margin-top: -90px;
+      opacity: 0.3;
+      text-decoration: none;
+  }
+
+ /* IMAGES */
+
+ .image_home {
+   position: relative;
+   display: inline-block;
+   width: 60%;
+   height: 60%;
+   left: 20px;
+   top: 5px;
+ }
+
+ .image_new_lead {
+   float: right;
+   position: relative;
+   display: inline-block;
+   width: 60%;
+   height: 60%;
+   right: 40px;
+   top: 5px;
+ }
+
+ /* PAGE TITLES */
+
+ .home_title {
+   display: inline-block;
+   color: white;
+ }
+
+ /* BUTTONS */
+
+ .home_buttons {
+   display: inline-block;
+   float: left;
+   text-decoration: none;
+   list-style: none;
+ }
+
+ .home_button {
+	background-color:#488286;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #488286;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:semibold;
+	padding:11px 23px;
+	text-decoration:none;
+  display: inline-block;
+ }
+
+ .github {
+  height: 34px;
+  width: auto;
+  padding-top: 25px;
+ }
+
+ .signup:hover {
+	background-color:#62AFB4;
+ }
+
+ .signup:active {
+	position:relative;
+	top:1px;
+ }
+
+ .submit_button {
+    color: black;
+}
+
+
+ /* TABLES */
+
+ td {
+  padding: 10px;
+ }
+
+ th {
+  padding: 10px;
+ }
+
+ table{
+  border-collapse:separate;
+  border:5px solid #264653;
+  border-radius:6px;
+  -moz-border-radius:6px;
+  background: white;
+ }
+
+ table td{
+  border:0;
+  border-top: 3px solid #264653;
+  color: black;
+ }
+
+ table td a {
+  color: black;
+  text-decoration: underline;
+ }
+
+ table th{
+   border:0;
+   border-bottom: 3px solid #c6854f;
+  color: black;
+ }
+
+ /* FILTER */
+
+ .filter {
+   position: relative;
+   float: right;
+   top: -80px;
+   right: 40px;
+   display: inline-block;
+ }

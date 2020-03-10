@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  company_id: 1
+  status: MyString
+  point_person: MyString
+  phone_number: MyString
+  email: MyString
+  position: MyString
+  created_on: 2020-03-10 17:03:37
+  applied_on: 2020-03-10 17:03:37
+  active: false
+
+two:
+  user_id: 1
+  company_id: 1
+  status: MyString
+  point_person: MyString
+  phone_number: MyString
+  email: MyString
+  position: MyString
+  created_on: 2020-03-10 17:03:37
+  applied_on: 2020-03-10 17:03:37
+  active: false
