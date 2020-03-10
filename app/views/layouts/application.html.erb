@@ -1,15 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Job</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!-- HEADER -->
+
+  <head>
+    <div class="header-content">
+     
+      </h1>
+      <%= csrf_meta_tags %>
+
+      
+      <%= csp_meta_tag %>
+
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     
+      <!-- NAVIGATION -->
+
+      <nav class="navigation">
+        <ul class="navigation-links" style="list-style-type: none;">
+       <% if current_user %>
+          <li class="navigation-logo">
+            <h1> Job Organizer </h1>
+          </li>
+
+          <li class="navigation-page">
+            <%= link_to "HOME", root_path %>
+          </li>
+
+      
+              <li class="navigation-page">
+                <%= link_to "DASHBOARD", user_leads_url(session[:user_id]) %>
+              </li>
+
+              <li class="navigation-page">
+                <%= link_to "ACCOUNT", user_path(current_user) %>
+              </li>
+
+            <li class="navigation-page-session">
+              <%= link_to "LOGOUT", signout_path, method: :delete %>
+            </li>
+
+          <% else %>
+            <li class="navigation-page-session">
+              <%= link_to "SIGN IN", signin_path%>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+    <hr>
   </head>
 
+  <!-- BODY -->
+
   <body>
-    <%= yield %>
+    <div class="body-content">
+      <%= yield %>
+    </div>
   </body>
 </html>

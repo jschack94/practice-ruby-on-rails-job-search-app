@@ -1,2 +1,6 @@
 class Company < ApplicationRecord
-end
+    has_many :leads
+    has_many :users, through: :leads
+  
+    validates :name, presence: true
+  end

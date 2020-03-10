@@ -1,3 +1,20 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  root 'static_pages#home'
+  resources :users do
+    resources :leads
+  end
+  resources :companies
+
+
+  get '/signin', to: 'sessions#new'
+  post '/sessions/create', to: 'sessions#create'
+  delete '/signout', to: 'sessions#destroy'
+
+  get '/auth/github/callback' => 'sessions#create_oath'
+
+  get '/web_dev' => 'leads#web_dev'
+
+  get '/search' => 'leads#search'
+
 end
