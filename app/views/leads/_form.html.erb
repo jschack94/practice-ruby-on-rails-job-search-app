@@ -1,0 +1,67 @@
+<!-- FORM - NEW LEAD -->
+
+<div class="form">
+  <%= form_for [@user, @lead] do |f| %>
+
+<!-- ERRORS -->
+
+  <div class="error">
+    <% if @lead.errors.any? %>
+
+      <h2><%= pluralize(@lead.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% @lead.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
+<!-- COMPANY INFORMATION -->
+
+    <%= f.hidden_field :user_id %>
+
+        <label>Existing Company:</label><br>
+        <%= f.collection_select(:company_id, @user.companies.all.uniq, :id, :name, include_blank: 'Select an existing Company or make a new one below') %>
+        <br>
+        <br>
+      <%= f.fields_for :company, @company do |company_field| %>
+
+        <label>New Company:</label><br>
+        <%= company_field.text_field :name %><br>
+
+        <label>Description</label><br>
+        <%= company_field.text_field :description %><br>
+
+        <label>Website</label><br>
+        <%= company_field.text_field :website %><br>
+
+        <label>City</label><br>
+        <%= company_field.text_field :city %><br>
+
+      <% end %>
+      <br>
+      <br>
+
+<!-- POSITION INFORMATION -->
+
+    <label>Position</label><br>
+    <%= f.text_field :position %><br>
+
+    <label>Point Person</label><br>
+    <%= f.text_field :point_person %><br>
+
+    <label>Email</label><br>
+    <%= f.email_field :email %><br>
+
+    <label>Phone Number</label><br>
+    <%= f.text_field :phone_number %><br>
+
+    <label>Status</label><br>
+    <%= f.select :status, Lead.options %><br>
+
+
+    <%= f.submit class: "submit_button"  %>
+  <% end %>
+</div>

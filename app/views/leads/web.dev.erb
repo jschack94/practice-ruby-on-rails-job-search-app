@@ -1,0 +1,41 @@
+<h1> Web Dev Leads! </h1>
+
+
+<% # bring in all the user LEADS %>
+<div class="table">
+  <table>
+<!-- TABLE HEADER -->
+      <tr class="table-header">
+        <th>COMPANY</th>
+        <th>WEBSITE</th>
+        <th>CITY</th>
+        <th>POSITION</th>
+        <th>CONTACT PERSON</th>
+        <th>PHONE NUMBER</th>
+        <th>EMAIL</th>
+        <th>STATUS</th>
+        <th>EDIT</th>
+      </tr>
+<!-- TABLE ROWS -->
+    <% current_user.leads.web_dev.each do |lead| %>
+      <tr class="table-data">
+        <td><%= Company.find_by(id: lead.company_id).name %></td>
+        <td><%= Company.find_by(id: lead.company_id).website  %></td>
+        <td><%= Company.find_by(id: lead.company_id).city %></td>
+        <td><%= lead.position %></td>
+        <td><%= lead.point_person %></td>
+        <td><%= lead.phone_number %></td>
+        <td><%= lead.email %></td>
+        <td>
+          <% if lead.status == "1" %>
+            <%= "Warm" %>
+          <% else %>
+            <%= "Cold" %>
+          <% end %>
+        </td>
+        <td><%= link_to "Edit Lead", edit_user_lead_url(@user, lead) %></td>
+      </tr>
+    <% end %>
+  </table>
+<% #call the scope method on those %>
+<% #print those out %>

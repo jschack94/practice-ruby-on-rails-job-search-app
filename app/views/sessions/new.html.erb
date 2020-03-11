@@ -1,0 +1,23 @@
+<!-- FORM - NEW SESSION -->
+
+<h1>Sign In!</h1>
+
+  <div class="form">
+    <%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+      <label>Email:</label>
+      <input name="email" type="text" id="name">
+
+      <label>Password:</label>
+
+      <input name="password" type="password" id="password">
+
+      <input type="submit" value='Sign In' class="submit_button">
+    <% end %>
+  </div>
+
+<!-- SIGN UP -->
+
+  <p class="subtext">
+    Don't have an account?
+    <%= link_to "Sign Up With Email", new_user_path %> | <%= link_to('Sign In with Github', 'https://jobs-sealthedeal.herokuapp.com/auth/github') %>
+  </p>

@@ -1,0 +1,27 @@
+  
+<!-- HOME -->
+
+
+
+
+<!-- BUTTONS -->
+  <br>
+ 
+ <p> Your own personal tool to help you stay organized during your web development job hunt.  
+  </br>
+  <ul class="home_buttons">
+
+    <% if current_user %>
+      <div class="button-large" id="signup">
+        <%= link_to "Dashboard", user_leads_path(session[:user_id]), class: "home_button"  %>
+      </div>
+
+    <% else %>b
+      <br>
+      <li><%= link_to "Sign up with Email", new_user_path, class: "home_button" %></li>
+    
+  </ul>
+<% end %>
+<br>
+
+</br>
