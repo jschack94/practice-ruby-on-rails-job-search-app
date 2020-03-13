@@ -22,6 +22,11 @@
 
 <!-- USER INFORMATION -->
 
+  <form action="action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar">
+  </div>
+<div class="container">
     <%= f.label :username %>
     <%= f.text_field :username %>
     <br>
@@ -32,9 +37,11 @@
     <%= f.password_field :password %>
     <br>
     <%= f.label :bio %>
+    <br>
     <%= f.text_area :bio %>
     <br>
 
     <%= f.submit class: "submit_button" %>
-
+</div>
   <% end %>
+  

@@ -1,0 +1,11 @@
+
+<!-- SHOW - USER -->
+<br>
+<h1> Account: <%= @user.username.upcase %> </h1>
+</br>
+
+<%= link_to "Update Account Details", edit_user_path(@user) %>
+
+  <p> Member Since: <%= @user.created_on.strftime("%B, %Y") %> </p>
+
+  <%= @user.bio %>

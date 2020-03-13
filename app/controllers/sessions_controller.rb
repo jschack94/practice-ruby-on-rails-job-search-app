@@ -28,11 +28,16 @@ class SessionsController < ApplicationController
   
   
     def destroy
-      session.delete :user_id
+      User.find(session[:user_id]).destroy      
+      session[:user_id] = nil   
       redirect_to root_url
     end
   
     private
+
+    def current_user
+      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    end
   
       def auth
         request.env["omniauth.auth"]

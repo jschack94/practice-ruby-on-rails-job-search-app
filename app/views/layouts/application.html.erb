@@ -13,49 +13,64 @@
       <%= csp_meta_tag %>
 
       <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-     
-      <!-- NAVIGATION -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
 
-      <nav class="navigation">
-        <ul class="navigation-links" style="list-style-type: none;">
-       <% if current_user %>
-          <li class="navigation-logo">
-            <h1> Job Organizer </h1>
-          </li>
 
-          <li class="navigation-page">
-            <%= link_to "HOME", root_path %>
-          </li>
+<div class="topnav"> 
+ <% if current_user %>
+  <%= link_to "DASHBOARD", user_leads_url(session[:user_id])%>
+  <%= link_to "ACCOUNT", user_path(current_user) %>
+  <%= link_to "LOGOUT", signout_path, method: :delete %>
+   </div>
+<br>
+
+
+
+  <% end %>
+
+
 
       
-              <li class="navigation-page">
-                <%= link_to "DASHBOARD", user_leads_url(session[:user_id]) %>
-              </li>
+      
+      
 
-              <li class="navigation-page">
-                <%= link_to "ACCOUNT", user_path(current_user) %>
-              </li>
-
-            <li class="navigation-page-session">
-              <%= link_to "LOGOUT", signout_path, method: :delete %>
-            </li>
-
-          <% else %>
-            <li class="navigation-page-session">
-              <%= link_to "SIGN IN", signin_path%>
-            </li>
-          <% end %>
-        </ul>
-      </nav>
-    </div>
-    <hr>
-  </head>
 
   <!-- BODY -->
 
   <body>
     <div class="body-content">
+    <p>
       <%= yield %>
-    </div>
+       <p>Created By: Jonathan Schack</p>
+  <p>© 2020 Copyright: Flatiron School</a></p>
+  
+      
+      </div>
+   
+  <script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 10000); // Change image every 2 seconds
+}
+</script>
+  
+  
+  
   </body>
 </html>
